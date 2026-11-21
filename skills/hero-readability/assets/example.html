@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero readability: synthetic example</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:1.1rem/1.5 system-ui;color:#172a23}main{max-width:72rem;margin:auto;padding:1rem}
+.sample-hero{position:relative;isolation:isolate;border-radius:1rem;overflow:hidden;color:#fff;background:#ddd}
+.sample-hero__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.sample-hero__original-overlay{position:absolute;inset:0;background:linear-gradient(transparent,#0006);z-index:1;pointer-events:none}
+.sample-hero__shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 85% 90% at 40% 55%,rgb(0 0 0 / 82%) 0%,rgb(0 0 0 / 62%) 60%,transparent 100%)}
+.sample-hero__content{position:relative;z-index:2;max-width:42rem;padding:clamp(1.5rem,6vw,5rem)}
+.sample-hero__title{font-size:clamp(2rem,6vw,4rem);line-height:1.1;overflow-wrap:anywhere}
+.sample-hero__title,.sample-hero__subtitle{text-shadow:0 1px 3px #0009}
+.sample-hero a{display:inline-block;background:white;color:#142a21;padding:.7rem 1rem;border-radius:.3rem}.sample-hero a:focus-visible{outline:3px solid #ffea00;outline-offset:5px}
+@media(max-width:600px){.sample-hero__shade{background:radial-gradient(ellipse 120% 100% at 50% 50%,#000d 0%,#000b 65%,#0007 100%)}}
+</style>
+<main><h1>Hero layering example</h1><p>Synthetic background only. Test your own photographs and measure contrast before making accessibility claims.</p>
+<section class="sample-hero" aria-labelledby="hero-title">
+<img class="sample-hero__image" width="1200" height="600" loading="eager" fetchpriority="high" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect width='1200' height='600' fill='%23fff6d8'/%3E%3Ccircle cx='900' cy='120' r='200' fill='white'/%3E%3Cpath d='M0 600L400 150L900 600Z' fill='%2390bcaa'/%3E%3C/svg%3E">
+<div class="sample-hero__original-overlay" aria-hidden="true"></div><div class="sample-hero__shade" aria-hidden="true"></div>
+<div class="sample-hero__content"><h2 id="hero-title" class="sample-hero__title">A longer title over a bright background</h2><p class="sample-hero__subtitle">The text region grows with its content. Decorative overlays must leave the link usable.</p><a href="#details">Read the example notes</a></div>
+</section><section id="details"><h2>Example notes</h2><p>Resize the page, zoom the text, and use Tab to reach the link. No external media or scripts are loaded.</p></section></main>
+</html>

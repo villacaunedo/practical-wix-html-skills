@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ordered captions: synthetic example</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:1.1rem/1.5 system-ui;color:#172a23}main{max-width:72rem;margin:auto;padding:1rem}
+.sample-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.sample-gallery__photo{margin:0;min-width:0;display:flex;flex-direction:column;border-radius:.75rem;overflow:hidden;background:#122c23;color:white}
+.sample-gallery__photo img{width:100%;height:12rem;object-fit:cover;display:block}
+.sample-gallery__photo figcaption{padding:.75rem;overflow-wrap:anywhere;flex:0 0 auto}
+@media(max-width:700px){.sample-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.sample-gallery__photo:last-child:nth-child(odd){grid-column:1 / -1}}
+@media(max-width:380px){.sample-gallery{grid-template-columns:minmax(0,1fr)}}
+</style>
+<main><h1>Ordered captions</h1><p>Two independent galleries exercise odd and even counts. Synthetic images deliberately repeat; order is the numbered caption order.</p>
+<h2>Three items</h2><div class="sample-gallery" id="odd-gallery">
+<figure class="sample-gallery__photo"><img width="600" height="400" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2390bcaa'/%3E%3C/svg%3E"><figcaption>1. First image</figcaption></figure>
+<figure class="sample-gallery__photo"><img width="600" height="400" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23edc883'/%3E%3C/svg%3E"><figcaption>2. Second image with a deliberately long caption that wraps across lines rather than disappearing outside a fixed-height gallery cell</figcaption></figure>
+<figure class="sample-gallery__photo"><img width="600" height="400" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2394b7d0'/%3E%3C/svg%3E"><figcaption>3. Third image</figcaption></figure>
+</div><h2>Four items</h2><div class="sample-gallery" id="even-gallery">
+<figure class="sample-gallery__photo"><img width="600" height="400" loading="lazy" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2390bcaa'/%3E%3C/svg%3E"><figcaption>1. First image</figcaption></figure>
+<figure class="sample-gallery__photo"><img width="600" height="400" loading="lazy" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%23edc883'/%3E%3C/svg%3E"><figcaption>2. Second image</figcaption></figure>
+<figure class="sample-gallery__photo"><img width="600" height="400" loading="lazy" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2394b7d0'/%3E%3C/svg%3E"><figcaption>3. Third image</figcaption></figure>
+<figure class="sample-gallery__photo"><img width="600" height="400" loading="lazy" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='600' height='400' fill='%2390bcaa'/%3E%3C/svg%3E"><figcaption>4. Fourth image</figcaption></figure>
+</div></main></html>
